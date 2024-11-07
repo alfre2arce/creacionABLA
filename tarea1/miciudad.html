@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico.png">
+    <title>Mi Ciudad</title>
+</head>
+<body>
+    <h1>Formularios</h1>
+    <main>
+        <header><h3>Mi Ciudad</h3></header>
+        <nav>
+        <a href="yo.html">Inicio</a>
+        <a href="mifamilia.html">Mi Familia</a>
+        <a href="misamigos.html">Mis Amigos</a>
+        <a href="miciudad.html">Mi Ciudad</a>
+        <a href="mishobbies.html">Mis Hobbies</a>
+        <a href="https://github.com/alfre2arce/sitioswebestaticos">Acerca de</a>
+        <a href="https://virtual2.posgradouap.edu.bo/">Contacto</a>
+        </nav>
+    </main>
+    <form action="yo.html" method="get">
+        <br>
+        <label for="departamento">Departamento:</label>
+        <input type="text" id="departamento" name="departamento" placeholder="Departamento">
+        <br>
+        <br>
+        <label for="municipio">Municipio:</label>
+        <select id="municipio" name="municipio">
+            <option value="1">Cobija</option>
+            <option value="2">Bolpebra</option>
+            <option value="3">Puerto Rico</option>
+        </select>
+        <br>
+        <br>
+        <label for="distrito">Distrito:</label>
+        <textarea id="distrito" name="distrito" placeholder="Distrito"></textarea>
+        <br>
+        <br>
+        <label for="poblacion">Poblacion:</label>
+        <input type="number" id="poblacion" name="poblacion" placeholder="Poblacion">
+        <br>
+        <br>
+        <label for="censo">Censo:</label>
+        <br>
+        <label for="censo">2012:</label>
+        <input type="checkbox" id="censo" name="censo" placeholder="Censo">
+        <br>
+        <label for="censo">2022:</label>
+        <input type="checkbox" id="censo" name="censo" placeholder="Censo">
+        <br>
+        <br>  
+        <label for="fecha">Fecha de Creacion:</label>
+        <input type="date" id="fecha" name="fecha" placeholder="Fecha">
+        <br>
+        <br>   
+        <label for="sexo">Sexo:</label>
+        <br>
+        <label for="sexo">Masculino:</label>
+        <input type="radio" id="sexo" name="sexo" placeholder="Sexo">
+        <br>
+        <label for="sexo">Femenino:</label>
+        <input type="radio" id="sexo" name="sexo" placeholder="Sexo">
+        <br>
+        <br>  
+        <label for="color">Color Bandera:</label>
+        <input type="color" id="color" name="color" placeholder="Color">
+        <br>
+        <br>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Limpiar">
+    </form>
+</body>
+</html>

@@ -1,0 +1,24 @@
+h1{
+    color: rgb(0, 156, 10);
+    text-align: center;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #e6e6e6;
+}
+a{
+    font-weight: bold;
+    color: #002708;               
+    border: 1px solid #365c46;
+    text-decoration: none;
+    margin-left: 2px;
+    margin-right: 2px;
+    background-color: #e0ffdc;
+    border-radius: 3px;
+    padding: 5px;
+    text-align: center;
+}
