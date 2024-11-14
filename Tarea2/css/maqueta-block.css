@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #005c99;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.header,
+.footer {
+  display: block;
+  width: 100%;
+  background-color: white;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.content-wrapper {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.sidebar,
+.content {
+  display: inline-block;
+  width: 49%;
+  /* Para que ocupen el 50% menos el margen */
+  background-color: white;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 1%;
+  vertical-align: top;
+  /* Alineación vertical en caso de que los contenidos sean de diferente altura */
+}
