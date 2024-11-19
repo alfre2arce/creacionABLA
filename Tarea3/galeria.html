@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería Dinámica de Imágenes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="gallery-container">
+    <div class="image-wrapper">
+      <button id="anterior-btn" class="side-button">⟵</button>
+      <img id="galeria-img" src="" alt="Galería de imágenes">
+      <button id="siguiente-btn" class="side-button">⟶</button>
+    </div>
+    <p id="estado-indicador">Imagen 1 de 1</p>
+  </div>
+
+  <script>
+    // Arreglo con URLs de imágenes
+    const imagenes = [
+      "https://hospitalveterinariodonostia.com/wp-content/uploads/2021/08/gatos.png",
+      "https://hospitalveterinariodonostia.com/wp-content/uploads/2021/08/AnimalesExoticos.png",
+      "https://hospitalveterinariodonostia.com/wp-content/uploads/2021/08/perro.png",
+      "https://hospitalveterinariodonostia.com/wp-content/uploads/2023/09/Acariciar-Gato.png",
+      "https://hospitalveterinariodonostia.com/wp-content/uploads/2023/09/Cobaya.png",
+    ];
+
+    let actualIndex = 0;
+
+    // Referencias a los elementos del DOM
+    const galeriaImg = document.getElementById("galeria-img");
+    const anteriorBtn = document.getElementById("anterior-btn");
+    const siguienteBtn = document.getElementById("siguiente-btn");
+    const estadoIndicador = document.getElementById("estado-indicador");
+
+    // Función para actualizar la galería
+    function actualizarGaleria() {
+      galeriaImg.src = imagenes[actualIndex];
+      estadoIndicador.textContent = `Imagen ${actualIndex + 1} de ${imagenes.length}`;
+      anteriorBtn.disabled = actualIndex === 0;
+      siguienteBtn.disabled = actualIndex === imagenes.length - 1;
+    }
+
+    // Event listeners para los botones
+    anteriorBtn.addEventListener("click", () => {
+      if (actualIndex > 0) {
+        actualIndex--;
+        actualizarGaleria();
+      }
+    });
+
+    siguienteBtn.addEventListener("click", () => {
+      if (actualIndex < imagenes.length - 1) {
+        actualIndex++;
+        actualizarGaleria();
+      }
+    });
+
+    // Eventos para el mouse sobre la imagen
+    galeriaImg.addEventListener("mouseenter", () => {
+      const fileName = imagenes[actualIndex].split("/").pop();;
+      estadoIndicador.textContent = `Estás viendo la imagen ${fileName}`;
+    });
+
+    galeriaImg.addEventListener("mouseleave", () => {
+      estadoIndicador.textContent = `Imagen ${actualIndex + 1} de ${imagenes.length}`;
+    });
+
+    // Inicializar la galería
+    actualizarGaleria();
+
+  </script>
+</body>
+
+</html>
