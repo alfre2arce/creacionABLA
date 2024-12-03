@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Online</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" >
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="img/Escudo de Pando.png" alt="Logotipo">
+            <h1>Planificación</h1>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#carrito" onclick="alternarCarrito()">Carrito</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="productos" class="productos">
+            <h1>Catálogo de Productos</h1>
+            <div class="grid">
+                <!-- Producto 1 -->
+                <div class="producto">
+                    <div class="galeria">
+                        <img src="img/producto1b.webp" alt="Producto 1 Imagen 1" class="miniatura" onclick="abrirModal('img/producto1b.webp')">
+                        <img src="img/producto1a.jpg" alt="Producto 1 Imagen 2" class="miniatura" onclick="abrirModal('img/producto1a.jpg')">
+                    </div>
+                    <h2>Pozo de Agua</h2>
+                    <p class="descripcion">Perforación en la tierra para acceder a fuentes subterráneas de agua.</p>
+                    <p class="precio">B$1.000</p>
+                    <button class="btn-carrito" onclick="agregarAlCarrito('Pozo de Agua', 1000)">Añadir al carrito</button>
+                </div>
+                <!-- Producto 2 -->
+                <div class="producto">
+                    <div class="galeria">
+                        <img src="img/producto2a.jpg" alt="Producto 2 Imagen 1" class="miniatura" onclick="abrirModal('img/producto2a.jpg')">
+                        <img src="img/producto2b.jpg" alt="Producto 2 Imagen 2" class="miniatura" onclick="abrirModal('img/producto2b.jpg')">
+                    </div>
+                    <h2>Sistemas Electricos</h2>
+                    <p class="descripcion">Instalación de sistemas electricos a interconección, generador, panel solar.</p>
+                    <p class="precio">B$1.000</p>
+                    <button class="btn-carrito" onclick="agregarAlCarrito('Sistemas Electricos', 1000)">Añadir al carrito</button>
+                </div>
+                <!-- Producto 3 -->
+                <div class="producto">
+                    <div class="galeria">
+                        <img src="img/producto3a.jpeg" alt="Producto 3 Imagen 1" class="miniatura" onclick="abrirModal('img/producto3a.jpeg')">
+                        <img src="img/producto3b.jpg" alt="Producto 3 Imagen 2" class="miniatura" onclick="abrirModal('img/producto3b.jpg')">
+                    </div>
+                    <h2>Red Vial</h2>
+                    <p class="descripcion">Construcción, mantenimiento y mejoramiento vial de ripio y asfalto.</p>
+                    <p class="precio">B$1.000</p>
+                    <button class="btn-carrito" onclick="agregarAlCarrito('Red Vial', 1000)">Añadir al carrito</button>
+                </div>
+                <!-- Producto 4 -->
+                <div class="producto">
+                    <div class="galeria">
+                        <img src="img/producto4a.jpg" alt="Producto 4 Imagen 1" class="miniatura" onclick="abrirModal('img/producto4a.jpg')">
+                        <img src="img/producto4b.jpg" alt="Producto 4 Imagen 2" class="miniatura" onclick="abrirModal('img/producto4b.jpg')">
+                    </div>
+                    <h2>Turismo</h2>
+                    <p class="descripcion">Albergue ecoturístico en zona rural en contacto con la naturaleza amazonico.</p>
+                    <p class="precio">B$1.000</p>
+                    <button class="btn-carrito" onclick="agregarAlCarrito('Turismo', 1000)">Añadir al carrito</button>
+                </div>
+                <!-- Producto 5 -->
+                <div class="producto">
+                    <div class="galeria">
+                        <img src="img/producto5a.avif" alt="Producto 5 Imagen 1" class="miniatura" onclick="abrirModal('img/producto5a.avif')">
+                        <img src="img/producto5b.avif" alt="Producto 5 Imagen 2" class="miniatura" onclick="abrirModal('img/producto5b.avif')">
+                    </div>
+                    <h2>Laguna Piscicola</h2>
+                    <p class="descripcion">Construcción y mantenimiento de estanques de tierra que retienen el agua y los peces.</p>
+                    <p class="precio">B$1.000</p>
+                    <button class="btn-carrito" onclick="agregarAlCarrito('Laguna Piscicola', 1000)">Añadir al carrito</button>
+                </div>
+                <!-- Más productos -->
+            </div>
+            <div id="modal" class="modal">
+                <span class="cerrar" onclick="cerrarModal()">&times;</span>
+                <img id="modal-imagen" class="modal-contenido">
+            </div> 
+        </section>
+        <!-- Carrito de Compra -->
+        <div id="carrito-contenedor" class="carrito-flotante minimizado">
+            <button id="carrito-boton" onclick="alternarCarrito()">
+                <span id="cantidad-total">0</span> 
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+            <div id="carrito-expandido">
+                <h3>Carrito de Compras</h3>
+                <ul id="lista-carrito"></ul>
+                <p id="total-precio">Total: B$0</p>
+                <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+            </div>
+        </div>
+        
+        
+    </main>
+    <footer>
+        <p>&copy; 2024 GAD Pando. Todos los derechos reservados.</p>
+        <div class="redes">
+            <a href="#"><i class="fab fa-facebook"></i> Facebook</a> | <a href="#"><i class="fab fa-instagram"></i> Instagram</a> | <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+        </div>
+    </footer>
+
+    <script src="js/funciones.js"></script>
+  
+</body>
+</html>
